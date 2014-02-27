@@ -11,18 +11,18 @@ buildscript {
 configure(allprojects) {
     group = "org.springframework.social"
 
-    ext.h2Version               = "1.3.173"
+    ext.h2Version               = "1.3.175"
     ext.hamcrestVersion         = "1.3"
-    ext.httpComponentsVersion   = "4.3.1"
-    ext.jacksonVersion          = "2.2.2"
+    ext.httpComponentsVersion   = "4.3.2"
+    ext.jacksonVersion          = "2.3.1"
     ext.javaxInjectVersion      = "1"
     ext.junitVersion            = "4.11"
     ext.mockitoVersion          = "1.9.5"
     ext.servletApiVersion       = "3.0.1"
-    ext.springVersion           = "4.0.1.RELEASE"
+    ext.springVersion           = "4.0.3.DEPENDENCIES"
     ext.springReleaseVersion    = "latest.release"
     ext.springSnapshotVersion   = "latest.integration"
-    ext.springSecurityVersion   = "3.2.0.RELEASE"
+    ext.springSecurityVersion   = "4.0.0.DEPENDENCIES"
     ext.thymeleafVersion        = "2.1.2.RELEASE"
     ext.jspApiVersion           = "2.2.1"
 
@@ -62,7 +62,7 @@ configure(allprojects) {
     ]
 
     sourceSets.test.resources.srcDirs = [
-        "src/test/resources", 
+        "src/test/resources",
         "src/test/java"
     ]
 
@@ -129,7 +129,7 @@ configure(subprojects) { subproject ->
         archives javadocJar
     }
 
-    configurations { 
+    configurations {
         springReleaseTestRuntime.extendsFrom testRuntime
         springSnapshotTestRuntime.extendsFrom testRuntime
     }
@@ -244,7 +244,7 @@ configure(rootProject) {
 
     dependencies { // for integration tests
     }
-    
+
     task api(type: Javadoc) {
         group = "Documentation"
         description = "Generates aggregated Javadoc API documentation."
